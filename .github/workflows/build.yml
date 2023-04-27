@@ -20,6 +20,7 @@ jobs:
         run: mvn clean compile --batch-mode --no-transfer-progress -Dsilent=true
 
   sonar:
+    needs: build
     name: Sonar analysis
     runs-on: ubuntu-latest #notez que l'analyse est lancée dans un container ubuntu fourni par github
     steps:
